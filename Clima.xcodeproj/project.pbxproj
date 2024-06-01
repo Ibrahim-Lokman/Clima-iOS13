@@ -15,6 +15,7 @@
 		ADAA27BD231BBFB300365194 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADAA27BB231BBFB300365194 /* LaunchScreen.storyboard */; };
 		ADAA27CE231BC87F00365194 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = ADAA27CD231BC87F00365194 /* README.md */; };
 		F81E89E42C0B2D4200D11A33 /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81E89E32C0B2D4200D11A33 /* WeatherData.swift */; };
+		F81E89E62C0B43AD00D11A33 /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81E89E52C0B43AD00D11A33 /* WeatherModel.swift */; };
 		F8D8BAF92C0A5434005B157B /* WeatherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D8BAF82C0A5434005B157B /* WeatherManager.swift */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +30,7 @@
 		ADAA27BE231BBFB300365194 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ADAA27CD231BC87F00365194 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		F81E89E32C0B2D4200D11A33 /* WeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
+		F81E89E52C0B43AD00D11A33 /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
 		F8D8BAF82C0A5434005B157B /* WeatherManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -96,6 +98,7 @@
 			children = (
 				F8D8BAF82C0A5434005B157B /* WeatherManager.swift */,
 				F81E89E32C0B2D4200D11A33 /* WeatherData.swift */,
+				F81E89E52C0B43AD00D11A33 /* WeatherModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -176,6 +179,7 @@
 				F81E89E42C0B2D4200D11A33 /* WeatherData.swift in Sources */,
 				ADAA27B1231BBFAF00365194 /* AppDelegate.swift in Sources */,
 				F8D8BAF92C0A5434005B157B /* WeatherManager.swift in Sources */,
+				F81E89E62C0B43AD00D11A33 /* WeatherModel.swift in Sources */,
 				ADAA27B3231BBFAF00365194 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
