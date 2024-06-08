@@ -8,8 +8,14 @@
 
 import Foundation
 
+protocol WeatherManagerDelegate {
+    func didUpdateWeather(weather: WeatherModel)
+}
+
 struct WeatherManager {
     let weatherURL = "https://api.openweathermap.org/data/2.5/weather?appid=dd2cd435b3cb44a7eaeaf368e86e36e7&units=metric"
+    
+    var delegate: WeatherManagerDelegate?
     
     func fetchWeather(cityName: String){
         let urlString = "\(weatherURL)&q=\(cityName)"
@@ -29,25 +35,28 @@ struct WeatherManager {
                 if let safetData = data {
 //                    let dataString = String(data: safetData , encoding: .utf8)
 //                    print(dataString)
-                    self.parseJSON(weatherData: safetData)
+                    if let weather =   self.parseJSON(weatherData: safetData){
+                        self.delegate?.didUpdateWeather(weather: weather)
+                        
+                    }
                 }
             }
             task.resume()
         }
     }
     
-    func handle(data: Data?, response: URLResponse?, error: Error?){
-        if error != nil {
-            print(error!)
-            return
-        }
-        if let safetData = data {
-            self.parseJSON(weatherData: safetData)
-           
-        }
-    }
+//    func handle(data: Data?, response: URLResponse?, error: Error?){
+//        if error != nil {
+//            print(error!)
+//            return
+//        }
+//        if let safetData = data {
+//            self.parseJSON(weatherData: safetData)
+//           
+//        }
+//    }
     
-    func parseJSON(weatherData: Data){
+    func parseJSON(weatherData: Data) -> WeatherModel? {
         let decoder = JSONDecoder()
        
         do {
@@ -60,31 +69,13 @@ struct WeatherManager {
             print(weather.conditionName)
             print(weather.temperatureString)
             
+            return weather
+            
            
             
         } catch{
             print(error)
+            return nil
         }
     }
-    
-//    func getConditionName(weatherId: Int) -> String{
-//        switch weatherId {
-//        case 200...232:
-//            return "cloud.bolt"
-//        case 300...321:
-//            return "cloud.drizzle"
-//        case 500...531:
-//            return "cloud.rain"
-//        case 600...622:
-//            return "cloud.snow"
-//        case 701...781:
-//            return "cloud.fog"
-//        case 800:
-//            return "sun.max"
-//        case 801...804:
-//            return "cloud.bolt"
-//        default:
-//            return "cloud"
-//        }
-//    }
-}
+    }
